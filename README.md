@@ -32,3 +32,31 @@ Looking at the result;
 * Values of k, j, i and j, k, i are closer to each other.
 
 In this case, it can be said that different arrangements are made according to 3 different types of access.
+
+### Explanation of the Algorithms Used in the Code and Specifying the Cache Friendly Code
+In loops i, j, k, and j, i, k, the case in the innermost iteration loop is as follows:
+
+![Innermost Iteration Loop](https://github.com/tugbaguler/Spatial-Locality/blob/main/assets/Screenshot_1.jpg)
+
+Hence for a fixed element C[i][j] the program iterates through A row-wise and B column-wise. 
+The next loop order to look at is k, i, j, and i, k, j, and its code is given below.
+
+![loop order ikj](https://github.com/tugbaguler/Spatial-Locality/blob/main/assets/Screenshot_2.jpg)
+
+In this iteration, it appears that the innermost loop calculation changes as follows:
+
+![Innermost Iteration Loop](https://github.com/tugbaguler/Spatial-Locality/blob/main/assets/Screenshot_3.jpg)
+
+The r is used to indicate that the element that remains constant in the iteration of the innermost loop is r A[i][k]. Therefore, one for each A[i][k] is repeated sequentially on the C matrix. C[i][0], C[i][1], …, C[i][j]. In this way, consecutive row elements of C are accessed, which reduces access times. Looking at B accessed on a row basis (B[k][0], B[k][1], …, B[k][j]), B is now also spatially optimized. To summarize, by changing the loop to i, k, j, the temporal locality is obtained for A and spatial optimization for B and C.
+
+The last loop orders are j, k, i or k, j, i.
+
+![Innermost Iteration Loop](https://github.com/tugbaguler/Spatial-Locality/blob/main/assets/Screenshot_4.jpg)
+
+In this the constant element is B[k][j] and for every iteration of the innermost loop the matrix C is accessed in the order. C[0][j], C[1][j] … C[i][j], i.e. column order. The matrix A is also accessed similarly. A[0][k], A[1][k] … A[i][k]. This algorithm, though less efficient than the i, k, j loop variant.
+
+j, k, i and k, j, i are column-wise ordering, and k, i, j and i, k, j are row-wise ordering. row-wise ordering is most efficient than column-wise ordering.
+
+The aim is to continue the experiment in the most efficient way. In the first part of the assignment, the desired cache-friendly algorithms are determined as k, i, j, and i, k, j. Therefore, the rest of the experiment was continued with the traditional method i, j, k algorithm and i, k, j which are the much faster cache-friendly algorithm.
+
+
