@@ -59,4 +59,15 @@ j, k, i and k, j, i are column-wise ordering, and k, i, j and i, k, j are row-wi
 
 The aim is to continue the experiment in the most efficient way. In the first part of the assignment, the desired cache-friendly algorithms are determined as k, i, j, and i, k, j. Therefore, the rest of the experiment was continued with the traditional method i, j, k algorithm and i, k, j which are the much faster cache-friendly algorithm.
 
+### Using Optimization Flags While Compiling the Program
+The table below shows how long traditional and cache-friendly algorithms work using optimization flags. The tables below show the elapsed times when the program is run using the -O2 and -O3 optimization flags.
 
+ * Elapsed Times When Algorithms are Started Using the -O2 Optimization Flag
+
+![Comparison Table Using with -O2 Optimization Flag](https://github.com/tugbaguler/Spatial-Locality/blob/main/assets/Using%20O2%20Optimization%20Flag.jpg)
+
+*  Elapsed Times When Algorithms are Started Using the -O3 Optimization Flag
+
+![Comparison Table Using with -O3 Optimization Flag](https://github.com/tugbaguler/Spatial-Locality/blob/main/assets/Using%20O3%20Optimization%20Flag.jpg)
+
+As can be seen from the tables, the program runs much faster when optimization flags are used, and the -O3 flag works faster than the -O2 flag, and also the program that runs without being optimized runs much slower.
