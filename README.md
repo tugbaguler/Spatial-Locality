@@ -71,3 +71,14 @@ The table below shows how long traditional and cache-friendly algorithms work us
 ![Comparison Table Using with -O3 Optimization Flag](https://github.com/tugbaguler/Spatial-Locality/blob/main/assets/Using%20O3%20Optimization%20Flag.jpg)
 
 As can be seen from the tables, the program runs much faster when optimization flags are used, and the -O3 flag works faster than the -O2 flag, and also the program that runs without being optimized runs much slower.
+
+### Result
+When tasks such as matrix multiplication are performed, it is seen how important the method of storing and accessing data is, especially when there are large matrices.
+
+The difference between the running time of the 6 loops variants used in multiplication is shown in the table below. Purple color indicates the elapsed time when the matrix size is 1024 X 1024, while the pink color indicates 2048 X 2048 and the blue color is 4196 X 4196.
+
+Where the size of N exceeds 1000, i, k, j and k, i, j perform quite well. It continues to run fast where other algorithms slow down. This is a direct result of cache optimization.
+
+![Comparison Table for Different Loop Variant](https://github.com/tugbaguler/Spatial-Locality/blob/main/assets/Comparison%20Table%20for%20Different%20Loops%20Variant.jpg)
+
+The 6 loops shown in the table can be combined into 3 main loops. i, j, k / i, k, j / k, j, i. In this case, the most suitable algorithm for i, k, j optimization is accepted.
