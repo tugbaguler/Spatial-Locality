@@ -72,7 +72,7 @@ The table below shows how long traditional and cache-friendly algorithms work us
 
 As can be seen from the tables, the program runs much faster when optimization flags are used, and the -O3 flag works faster than the -O2 flag, and also the program that runs without being optimized runs much slower.
 
-### Result
+### Conclusion
 When tasks such as matrix multiplication are performed, it is seen how important the method of storing and accessing data is, especially when there are large matrices.
 
 The difference between the running time of the 6 loops variants used in multiplication is shown in the table below. Purple color indicates the elapsed time when the matrix size is 1024 X 1024, while the pink color indicates 2048 X 2048 and the blue color is 4196 X 4196.
